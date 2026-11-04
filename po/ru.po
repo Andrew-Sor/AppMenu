@@ -1,0 +1,460 @@
+# AppMenu translation template.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AppMenu\\n"
+"POT-Creation-Date: 2026-07-25 06:58+0000\\n"
+"PO-Revision-Date: AUTO\\n"
+"Last-Translator: AUTO\\n"
+"Language-Team: none\\n"
+"MIME-Version: 1.0\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+
+msgid "(untitled)"
+msgstr "(без названия)"
+
+msgid "..."
+msgstr "..."
+
+msgid "About %s"
+msgstr "О %s"
+
+msgid "About AppMenu"
+msgstr "О AppMenu"
+
+msgid "About This System"
+msgstr "Об этом Mac"
+
+msgid "App Details"
+msgstr "О приложении"
+
+msgid "AppMenu"
+msgstr "AppMenu"
+
+msgid "AppMenu Settings"
+msgstr "Настройки AppMenu"
+
+msgid "AppMenu Status"
+msgstr "Статус AppMenu"
+
+msgid "Appearance"
+msgstr "Внешний вид"
+
+msgid "Application unavailable"
+msgstr "Приложение недоступно"
+
+msgid "Applications"
+msgstr "Приложения"
+
+msgid "As Icons"
+msgstr "Значками"
+
+msgid "As List"
+msgstr "Списком"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Bring All to Front"
+msgstr "Все на передний план"
+
+msgid "Choose an icon from the visual gallery below."
+msgstr "Выберите иконку из представленной ниже галереи изображений."
+
+msgid "Choose the panel icon and how AppMenu appears in the top bar."
+msgstr "Выберите значок панели и способ отображения меню приложений в верхней панели."
+
+msgid "Choose which side of the panel shows workspace navigation."
+msgstr "Выберите, с какой стороны панели будет отображаться навигация по рабочему пространству."
+
+msgid "Clear Menu"
+msgstr "Очистить меню"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Close Window"
+msgstr "Закрыть окно"
+
+msgid "Computer"
+msgstr "Компьютер"
+
+msgid "Configure optional panel items such as user switching and workspace navigation."
+msgstr "Настройте дополнительные элементы панели, такие как переключение пользователей и навигация по рабочему пространству."
+
+msgid "Control when menus update and whether AppMenu should use real exported app menus."
+msgstr "Управляйте моментами обновления меню и определяйте, следует ли AppMenu использовать реальные экспортированные меню приложения."
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Copy Troubleshooting Info"
+msgstr "Скопировать информацию по устранению неполадок"
+
+msgid "Could not copy troubleshooting info. Enable debug logging and check the journal."
+msgstr "Не удалось скопировать информацию для устранения неполадок. Включите отладочное логирование и проверьте журнал."
+
+msgid "Current Status"
+msgstr "Текущий статус"
+
+msgid "Custom"
+msgstr "Свой"
+
+msgid "Cut"
+msgstr "Вырезать"
+
+msgid "Debug Logging"
+msgstr "Отладочное логирование"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Desktop"
+msgstr "Finder"
+
+msgid "Diagnostics"
+msgstr "Диагностика"
+
+msgid "Disabled"
+msgstr "Отключено"
+
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Downloads"
+msgstr "Загрузки"
+
+msgid "Edit"
+msgstr "Редактироватьт"
+
+msgid "Eject"
+msgstr "Извлечь"
+
+msgid "Emoji & Symbols"
+msgstr "Эмоджи и символы"
+
+msgid "Empty Trash..."
+msgstr "Очистить корзину"
+
+msgid "Enable troubleshooting logs only when you need to collect debug information."
+msgstr "Включайте журналы устранения неполадок только тогда, когда вам необходимо собрать отладочную информацию."
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Enter Full Screen"
+msgstr "На весь экран"
+
+msgid "Extension: Active"
+msgstr "Расширение: активно"
+
+msgid "Fallback menus"
+msgstr "Резервные меню"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Find"
+msgstr "Найти"
+
+msgid "Focused app: %s"
+msgstr "Фокусированное приложение: %s"
+
+msgid "Force Quit..."
+msgstr "Завершить принудительно"
+
+msgid "Force Quit…"
+msgstr "Завершить принудительно"
+
+msgid "Forward"
+msgstr "Вперёд"
+
+msgid "Get Info"
+msgstr "Получить информацию"
+
+msgid "Go"
+msgstr "Перейти"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "Hide %s"
+msgstr "Скрыть %s"
+
+msgid "Hide AppMenu"
+msgstr "Скрыть AppMenu"
+
+msgid "Hide Others"
+msgstr "Скрыть другое"
+
+msgid "Home"
+msgstr "Домой"
+
+msgid "Icon"
+msgstr "Значок"
+
+msgid "Icon Size"
+msgstr "Размер значка"
+
+msgid "Item unavailable"
+msgstr "Пункт недоступен"
+
+msgid "Left side"
+msgstr "Левая сторона"
+
+msgid "Lock Screen"
+msgstr "Заблокировать экран"
+
+msgid "Lock to focused app"
+msgstr "Блокировка за фокусом окна"
+
+msgid "Log Out..."
+msgstr "Завершить сеанс"
+
+msgid "Login Window..."
+msgstr "Экран входа"
+
+msgid "Maximize"
+msgstr "Развернуть на весь экран"
+
+msgid "Menu Behavior"
+msgstr "Поведение меню"
+
+msgid "Menu source: %s"
+msgstr "Источник меню: %s"
+
+msgid "Minimize"
+msgstr "Свернуть"
+
+msgid "More"
+msgstr "Больше"
+
+msgid "Move Window Left"
+msgstr "Переместить окно влево"
+
+msgid "Move Window Right"
+msgstr "Переместить окно вправо"
+
+msgid "Move to Trash"
+msgstr "Переместить в корзину"
+
+msgid "Network"
+msgstr "Сеть"
+
+msgid "New Folder"
+msgstr "Новая папка"
+
+msgid "New Tab"
+msgstr "Новая вкладка"
+
+msgid "New Window"
+msgstr "Новое окно"
+
+msgid "Next Workspace"
+msgstr "Следующее рабочее пространство"
+
+msgid "No eligible user accounts found"
+msgstr "Подходящих учетных записей пользователей не найдено."
+
+msgid "No items configured"
+msgstr "Элементы не настроены"
+
+msgid "No recent items"
+msgstr "Нету последних элементов"
+
+msgid "No results found"
+msgstr "Результаты не найдены"
+
+msgid "Only update menu when switching windows."
+msgstr "Обновлять меню только при переключении окон."
+
+msgid "Open"
+msgstr "Открыть"
+
+msgid "Open AppMenu Preferences"
+msgstr "Открыть настройки AppMenu"
+
+msgid "Open GNOME Settings"
+msgstr "Открыть настройки GNOME"
+
+msgid "Open Home"
+msgstr "Открыть домашнюю папку"
+
+msgid "Open Windows"
+msgstr "Открыть окно"
+
+msgid "Open With"
+msgstr "Открыть с"
+
+msgid "Panel Extras"
+msgstr "Дополнительные элементы панели"
+
+msgid "Panel icon size in pixels (12–36)."
+msgstr "Размер значка панели в пикселях (12-36)"
+
+msgid "Paste"
+msgstr "Вставить"
+
+msgid "Previous Workspace"
+msgstr "Предыдущее рабочее пространство"
+
+msgid "Print"
+msgstr "Печать"
+
+msgid "Quit %s"
+msgstr "Выйти из %s"
+
+msgid "Read exported D-Bus menus when apps provide them. Apps without exported menus keep the safe fallback menus."
+msgstr "Чтение экспортированных меню D-Bus, если приложения их предоставляют. Для приложений, без экспортированных меню D-Bus, сохраняют резервные меню."
+
+msgid "Real exported menus"
+msgstr "Реальное экспортированное меню"
+
+msgid "Real menus: %s"
+msgstr "Реальное меню: %s"
+
+msgid "Recent Files"
+msgstr "Недавние файлы"
+
+msgid "Recent Items"
+msgstr "Недавно использованные объекты"
+
+msgid "Recents"
+msgstr "недавнее"
+
+msgid "Redo"
+msgstr "Повторить"
+
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "Reset"
+msgstr "Сбросить"
+
+msgid "Reset AppMenu Settings"
+msgstr "Сбросить настройки AppMenu"
+
+msgid "Restart"
+msgstr "Перезапуск"
+
+msgid "Restore AppMenu preferences to their packaged defaults."
+msgstr "Восстановите настройки меню приложения до значений по умолчанию, установленных в комплекте."
+
+msgid "Reverse Sort Order"
+msgstr "Обратный порядок"
+
+msgid "Right side"
+msgstr "Правая сторона"
+
+msgid "Search apps, recent files, and settings"
+msgstr "Поиск приложений, недавних файлов и настроек"
+
+msgid "Search icons"
+msgstr "Поиск значков"
+
+msgid "Search..."
+msgstr "Поиск..."
+
+msgid "Select All"
+msgstr "Выделить всё"
+
+msgid "Send Feedback"
+msgstr "Обратная связь"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Show All"
+msgstr "Показать всё"
+
+msgid "Show Hidden Files"
+msgstr "Показывать скрытые файлы"
+
+msgid "Show OS icon"
+msgstr "Показывать значок ОС"
+
+msgid "Show User Switcher"
+msgstr "Показывать переключатель пользователей"
+
+msgid "Show Workspace Indicator"
+msgstr "Показывать индикатор рабочего пространства"
+
+msgid "Show the logo icon in the top panel."
+msgstr "Показывать значок логотипа на верхней панели."
+
+msgid "Show user switcher in the right side of the panel."
+msgstr "Показывать переключатель пользователей в правой части панели."
+
+msgid "Show workspace navigation dots in the top panel."
+msgstr "Показывать точки навигации по рабочему пространству на верхней панели."
+
+msgid "Shut Down"
+msgstr "Выключение"
+
+msgid "Sleep"
+msgstr "Режим сна"
+
+msgid "Software"
+msgstr "App Store"
+
+msgid "Sort by Date"
+msgstr "Сортировка по дате"
+
+msgid "Sort by Kind"
+msgstr "Сортировка по типу"
+
+msgid "Sort by Name"
+msgstr "Сортировка по имени"
+
+msgid "Sort by Size"
+msgstr "Сортировка по размеру"
+
+msgid "Start typing to search apps, settings, and recent files."
+msgstr "Начните вводить текст для поиска в приложениях, настройках и недавно использованных файлах."
+
+msgid "System Settings"
+msgstr "Системные настройки"
+
+msgid "Tile Left"
+msgstr "Заполнить левую сторону"
+
+msgid "Tile Right"
+msgstr "Заполнить правую сторону"
+
+msgid "Toggle Path Bar"
+msgstr "Переключить панель пути"
+
+msgid "Troubleshooting info copied to clipboard."
+msgstr "Информация для устранения неполадок скопирована в буфер обмена."
+
+msgid "Try a different app, setting, or recent file name."
+msgstr "Попробуйте другое приложение, другие настройки или имя недавно использованного файла."
+
+msgid "Undo"
+msgstr "Отменить"
+
+msgid "Untitled"
+msgstr "Без названия"
+
+msgid "Use real application menus"
+msgstr "Использовать реальное меню приложения"
+
+msgid "Users & Groups Preferences..."
+msgstr "Users & Groups Preferences"
+
+msgid "Utilities"
+msgstr "Утилиты"
+
+msgid "View"
+msgstr "Вид"
+
+msgid "Window"
+msgstr "Окно"
+
+msgid "Workspace Indicator Position"
+msgstr "Позиция индикатора рабочего пространства"
+
+msgid "Write diagnostic AppMenu logs to the GNOME Shell journal."
+msgstr "Записывать диагностические журналы меню приложений в журнал GNOME Shell."
+
