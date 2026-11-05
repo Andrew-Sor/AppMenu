@@ -42,14 +42,14 @@ def extract():
         f.write('# AppMenu translation template.\n')
         f.write('#\n')
         f.write('msgid ""\nmsgstr ""\n')
-        f.write('"Project-Id-Version: AppMenu\\\\n"\n')
-        f.write('"POT-Creation-Date: 2026-07-25 06:58+0000\\\\n"\n')
-        f.write('"PO-Revision-Date: AUTO\\\\n"\n')
-        f.write('"Last-Translator: AUTO\\\\n"\n')
-        f.write('"Language-Team: none\\\\n"\n')
-        f.write('"MIME-Version: 1.0\\\\n"\n')
-        f.write('"Content-Type: text/plain; charset=UTF-8\\\\n"\n')
-        f.write('"Content-Transfer-Encoding: 8bit\\\\n"\n')
+        f.write('"Project-Id-Version: AppMenu\\n"\n')
+        f.write('"POT-Creation-Date: 2026-07-25 06:58+0000\\n"\n')
+        f.write('"PO-Revision-Date: AUTO\\n"\n')
+        f.write('"Last-Translator: AUTO\\n"\n')
+        f.write('"Language-Team: none\\n"\n')
+        f.write('"MIME-Version: 1.0\\n"\n')
+        f.write('"Content-Type: text/plain; charset=UTF-8\\n"\n')
+        f.write('"Content-Transfer-Encoding: 8bit\\n"\n')
         f.write('\n')
         for s in sorted(strings):
             esc = s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n').replace('\t', '\\t')
@@ -60,64 +60,100 @@ def extract():
     print(f'Extracted {len(strings)} unique strings into po/appmenu.pot')
 
 
+def _unescape(s):
+    out = []
+    i = 0
+    while i < len(s):
+        c = s[i]
+        if c == '\\' and i + 1 < len(s):
+            n = s[i + 1]
+            out.append({'n': '\n', 't': '\t', '"': '"', '\\': '\\'}.get(n, '\\' + n))
+            i += 2
+        else:
+            out.append(c)
+            i += 1
+    return ''.join(out)
+
+
+def parse_po(po_path):
+    """Parse a .po file into {msgid: msgstr}. Supports multi-line strings."""
+    entries = {}
+    cur = None      # 'id' or 'str'
+    mid = mstr = None
+    fuzzy = False
+
+    def flush():
+        nonlocal mid, mstr, fuzzy
+        if mid is not None and mstr is not None and not fuzzy:
+            entries[mid] = mstr
+        mid = mstr = None
+        fuzzy = False
+
+    with open(po_path, 'r', encoding='utf-8') as f:
+        for raw in f:
+            line = raw.strip()
+            if line.startswith('#,') and 'fuzzy' in line:
+                flush()
+                fuzzy = True
+                continue
+            if line.startswith('#') or not line:
+                continue
+            if line.startswith('msgid '):
+                if mstr is not None:
+                    flush()
+                mid = _unescape(line[6:].strip()[1:-1])
+                cur = 'id'
+            elif line.startswith('msgstr '):
+                mstr = _unescape(line[7:].strip()[1:-1])
+                cur = 'str'
+            elif line.startswith('"') and cur:
+                part = _unescape(line[1:-1])
+                if cur == 'id':
+                    mid += part
+                else:
+                    mstr += part
+        flush()
+    return entries
+
+
 def compile_mo(po_path):
-    """Compile a single .po file to .mo. Returns number of entries."""
-    with open(po_path, 'r') as f:
-        data = f.read()
+    """Compile a single .po file to .mo. Returns number of translated entries."""
+    parsed = parse_po(po_path)
+    entries = {k: v for k, v in parsed.items() if k and v}   # skip empty/untranslated
+    # The header entry (empty msgid) tells gettext the charset
+    entries[''] = ('Content-Type: text/plain; charset=UTF-8\n'
+                   'Content-Transfer-Encoding: 8bit\n')
+    items = sorted((k.encode('utf-8'), v.encode('utf-8')) for k, v in entries.items())
+    n = len(items)
 
-    entries = []
-    for m in re.finditer(r'msgid "((?:[^"\\]|\\.)*)"\s*\nmsgstr "((?:[^"\\]|\\.)*)"', data):
-        mid = m.group(1)
-        mstr = m.group(2)
-        if not mid:
-            continue
-        mid = (mid.replace('\\"', '"').replace('\\n', '\n')
-                   .replace('\\t', '\t').replace('\\\\', '\\'))
-        mstr = (mstr.replace('\\"', '"').replace('\\n', '\n')
-                     .replace('\\t', '\t').replace('\\\\', '\\'))
-        entries.append((mid, mstr))
-
-    entries.sort(key=lambda x: x[0])
-    n = len(entries)
-
-    # Binary .mo layout (big-endian)
-    o_offset = 28
-    o_size = n * 8
-    t_offset = o_offset + o_size
-    t_size = n * 8
-    data_off = t_offset + t_size
-
-    o_entries = []; t_entries = []; orig = []; trans = []
-    for mid, mstr in entries:
-        ob = mid.encode('utf-8') + b'\x00'
-        tb = mstr.encode('utf-8') + b'\x00'
-        o_entries.append((len(mid), data_off)); orig.append(ob); data_off += len(ob)
-        t_entries.append((len(mstr), data_off)); trans.append(tb); data_off += len(tb)
+    # Binary .mo layout (little-endian is fine: magic is detected by readers)
+    keys_start = 28 + n * 16
+    ids = b''
+    strs = b''
+    id_table = []
+    str_table = []
+    for k, v in items:
+        id_table.append((len(k), keys_start + len(ids)))
+        ids += k + b'\x00'
+    values_start = keys_start + len(ids)
+    for k, v in items:
+        str_table.append((len(v), values_start + len(strs)))
+        strs += v + b'\x00'
 
     mo_dir = os.path.join(ROOT, 'locale', os.path.splitext(os.path.basename(po_path))[0], 'LC_MESSAGES')
     os.makedirs(mo_dir, exist_ok=True)
     mo_path = os.path.join(mo_dir, 'appmenu.mo')
 
     with open(mo_path, 'wb') as f:
-        f.write(struct.pack('>I', 0x950412de))  # magic
-        f.write(struct.pack('>I', 0))            # revision
-        f.write(struct.pack('>I', n))            # num entries
-        f.write(struct.pack('>I', o_offset))
-        f.write(struct.pack('>I', t_offset))
-        f.write(struct.pack('>I', 0))            # hash size
-        f.write(struct.pack('>I', 0))            # hash offset
-        for length, offset in o_entries:
-            f.write(struct.pack('>I', length))
-            f.write(struct.pack('>I', offset))
-        for length, offset in t_entries:
-            f.write(struct.pack('>I', length))
-            f.write(struct.pack('>I', offset))
-        for s in orig:
-            f.write(s)
-        for s in trans:
-            f.write(s)
+        f.write(struct.pack('<7I', 0x950412de, 0, n, 28, 28 + n * 8, 0, 0))
+        for length, offset in id_table:
+            f.write(struct.pack('<II', length, offset))
+        for length, offset in str_table:
+            f.write(struct.pack('<II', length, offset))
+        f.write(ids)
+        f.write(strs)
 
-    return n
+    return n - 1
 
 
 def compile_all():

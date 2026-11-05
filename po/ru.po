@@ -458,3 +458,21 @@ msgstr "Позиция индикатора рабочего пространс�
 msgid "Write diagnostic AppMenu logs to the GNOME Shell journal."
 msgstr "Записывать диагностические журналы меню приложений в журнал GNOME Shell."
 
+
+msgid "Choose a shortcut that does not conflict with your applications."
+msgstr "Выберите сочетание клавиш, которое не конфликтует с вашими приложениями."
+
+msgid "Disable"
+msgstr "Отключить"
+
+msgid "Press your new shortcut. Escape cancels; Backspace disables it."
+msgstr "Нажмите новое сочетание клавиш. Escape — отмена, Backspace — отключить."
+
+msgid "Reset shortcut"
+msgstr "Сбросить сочетание"
+
+msgid "Search shortcut"
+msgstr "Сочетание для поиска"
+
+msgid "Use Control, Alt, or Super together with another key."
+msgstr "Используйте Control, Alt или Super вместе с другой клавишей."

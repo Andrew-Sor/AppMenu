@@ -2,14 +2,14 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: AppMenu\\n"
-"POT-Creation-Date: 2026-07-25 06:58+0000\\n"
-"PO-Revision-Date: AUTO\\n"
-"Last-Translator: AUTO\\n"
-"Language-Team: none\\n"
-"MIME-Version: 1.0\\n"
-"Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\\n"
+"Project-Id-Version: AppMenu\n"
+"POT-Creation-Date: 2026-07-25 06:58+0000\n"
+"PO-Revision-Date: AUTO\n"
+"Last-Translator: AUTO\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "(untitled)"
 msgstr ""
@@ -57,6 +57,9 @@ msgid "Back"
 msgstr ""
 
 msgid "Bring All to Front"
+msgstr ""
+
+msgid "Choose a shortcut that does not conflict with your applications."
 msgstr ""
 
 msgid "Choose an icon from the visual gallery below."
@@ -114,6 +117,9 @@ msgid "Desktop"
 msgstr ""
 
 msgid "Diagnostics"
+msgstr ""
+
+msgid "Disable"
 msgstr ""
 
 msgid "Disabled"
@@ -296,6 +302,9 @@ msgstr ""
 msgid "Paste"
 msgstr ""
 
+msgid "Press your new shortcut. Escape cancels; Backspace disables it."
+msgstr ""
+
 msgid "Previous Workspace"
 msgstr ""
 
@@ -335,6 +344,9 @@ msgstr ""
 msgid "Reset AppMenu Settings"
 msgstr ""
 
+msgid "Reset shortcut"
+msgstr ""
+
 msgid "Restart"
 msgstr ""
 
@@ -351,6 +363,9 @@ msgid "Search apps, recent files, and settings"
 msgstr ""
 
 msgid "Search icons"
+msgstr ""
+
+msgid "Search shortcut"
 msgstr ""
 
 msgid "Search..."
@@ -435,6 +450,9 @@ msgid "Undo"
 msgstr ""
 
 msgid "Untitled"
+msgstr ""
+
+msgid "Use Control, Alt, or Super together with another key."
 msgstr ""
 
 msgid "Use real application menus"
